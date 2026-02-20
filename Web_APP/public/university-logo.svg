@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <!-- Golden U shape -->
+  <rect x="5" y="5" width="60" height="70" fill="#F39C12" />
+  <rect x="25" y="5" width="20" height="40" fill="white" />
+  
+  <!-- Vertical line separator -->
+  <rect x="75" y="5" width="2" height="70" fill="#F39C12" />
+  
+  <!-- Text part -->
+  <g fill="#005694">
+    <text x="90" y="25" font-family="Arial, sans-serif" font-weight="bold" font-size="16">ECOLE</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-weight="bold" font-size="16">POLYTECHNIQUE</text>
+    <text x="90" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="16">D'AGADIR</text>
+  </g>
+</svg> 

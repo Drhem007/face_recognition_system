@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #005694; /* University deep blue */
+  --accent: #F39C12; /* University golden yellow */
+  --background: #f5f5f5;
+  --foreground: #333333;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Signin and loading animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Sidebar animations */
+.sidebar-item {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.sidebar-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--primary);
+  opacity: 0.1;
+  border-radius: 0 4px 4px 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-item:hover::before {
+  width: 4px;
+}
+
+.sidebar-item.active::before {
+  width: 4px;
+  background-color: var(--primary);
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(0, 86, 148, 0.6);
+}
+
+.sidebar-item:hover .icon,
+.sidebar-item.active .icon {
+  color: var(--primary);
+  transform: translateX(2px) scale(1.1);
+}
+
+.sidebar-item .icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-item:hover span {
+  transform: translateX(2px);
+  color: var(--primary);
+}
+
+.sidebar-item span {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gradient hover effect */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.sidebar-item:hover {
+  background: linear-gradient(270deg, rgba(243, 156, 18, 0.05), rgba(0, 86, 148, 0.05));
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.sidebar-item.active {
+  background: linear-gradient(to right, rgba(0, 86, 148, 0.1), transparent);
+}
+
+/* Card hover effects */
+.device-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.device-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
